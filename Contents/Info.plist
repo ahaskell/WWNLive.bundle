@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>CFBundleIdentifier</key>
+        <string>info.the203.wwnlive</string>
+
+        <key>PlexClientPlatforms</key>
+        <string>MacOSX,Linux,Windows,Windows Phone,iOS,Roku,LGTV,Samsung,Chrome,Firefox,Safari</string>
+
+        <key>PlexFrameworkVersion</key>
+        <string>2</string>
+
+        <key>PlexPluginRegions</key>
+        <array>
+            <string>US</string>
+        </array>
+
+
+        <key>PlexFrameworkFlags</key>
+        <array>
+            <string>UseRealRTMP</string>
+        </array>
+
+    </dict>
+</plist>

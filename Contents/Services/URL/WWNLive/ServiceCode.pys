@@ -1,0 +1,35 @@
+def MetadataObjectForURL(url):
+    vc = VideoClipObject(title="WWNLive Splash", duration=567, thumb="http://www.wwnlive.com/images/logo_.png")
+    return vc
+
+
+def MediaObjectsForURL(url):
+    file = get_file(url)
+    Log("MediaObject - rtmp://video.myippv.com/1267_161_push_69/"+file)
+    return [MediaObject(
+        video_codec=VideoCodec.H264,
+        audio_codec=AudioCodec.AAC,
+        audio_channels=2,
+        duration=500,
+        parts=[
+            PartObject(
+                key=Callback(PlayVideo, url=url)
+            )
+        ]
+    )]
+
+
+def NormalizeURL(url):
+    return url
+
+
+def get_file(url):
+    return url.split("/")[-1]
+
+
+@indirect
+def PlayVideo(url=None, **kwargs):
+    file = get_file(url)
+    Log("Adam Playing - rtmp://video.myippv.com/1267_161_push_69/"+file)
+    return IndirectResponse(VideoClipObject, key=RTMPVideoURL(
+        url="rtmp://video.myippv.com/1267_161_push_69/"+file))
